@@ -60,30 +60,46 @@ a:visited {
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 42em;
+  width: 100%;
   margin: 3em auto 2em;
   line-height: 1.5em; }
 
+.container {
+  width: 100%;
+  margin: 0 auto; }
+
+.content {
+  padding: 20px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .content {
+      width: 80%; } }
+  @media (min-width: 992px) {
+    .content {
+      width: 900px; } }
+
 .header a {
-  font-weight: bold;
   text-decoration: none; }
 
 .title {
-  display: inline-block;
-  margin-bottom: 2em; }
-
-.title a {
-  color: #a00; }
-
-.title a:hover {
-  color: #000; }
+  display: block;
+  margin-bottom: 2em;
+  text-align: center; }
+  .title a {
+    color: white; }
+    .title a:hover {
+      color: rgba(255, 255, 255, 0.8); }
+  @media (min-width: 768px) {
+    .title {
+      text-align: left;
+      display: inline-block; } }
 
 .header a.extra {
-  color: #aaa;
+  color: white;
   margin-left: 1em; }
 
 .header a.extra:hover {
-  color: #000; }
+  color: rgba(255, 255, 255, 0.8); }
 
 .meta {
   color: #aaa; }
@@ -109,6 +125,14 @@ a:visited {
 
 .footer .rss img {
   border: 0; }
+
+.header a {
+  font-weight: bold;
+  text-decoration: none; }
+
+.header a {
+  font-weight: bold;
+  text-decoration: none; }
 
 /*****************************************************************************/
 /*
@@ -397,3 +421,127 @@ a:visited {
 /* Literal.Number.Integer.Long */
 body {
   background: white; }
+
+/* -----------------------------------------header-------------------------------- */
+.site {
+  padding: 0;
+  margin: 0; }
+
+.header {
+  background-color: black; }
+  .header h1 {
+    font-size: 2rem;
+    color: white; }
+    @media (min-width: 768px) {
+      .header h1 {
+        margin: 0; } }
+
+.nav {
+  list-style-type: none;
+  display: block;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .nav {
+      display: inline-block;
+      float: right;
+      text-align: center; } }
+  .nav li {
+    display: inline-block; }
+
+/* -----------------------------------------content-------------------------------- */
+.hero {
+  background-image: url(/img/mountain.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 394px; }
+  .hero h1 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    line-height: 200px; }
+  .hero p {
+    text-align: center;
+    font-size: 1em;
+    color: white; }
+  .hero a {
+    text-decoration: none;
+    line-height: 5em;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 300px;
+    border: white solid 1px;
+    border-radius: 4px; }
+    .hero a:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  @media (min-width: 768px) {
+    .hero {
+      min-height: 1000px; } }
+
+.container h1 {
+  font-size: 2rem;
+  margin: 10px 0 6px 0; }
+
+.row {
+  margin: 0; }
+  @media (min-width: 768px) {
+    .row {
+      margin: 0 -10px 0 -10px; } }
+
+.onethird {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .onethird {
+      width: 33.3333%;
+      float: left;
+      padding: 10px; } }
+
+/* -----------------------------------------contactform-------------------------------- */
+* {
+  box-sizing: border-box; }
+
+.contact-form {
+  width: 100%; }
+  .contact-form input {
+    width: 100%;
+    display: block;
+    line-height: 50px;
+    background-color: #eee;
+    border-radius: 3px;
+    border: 2px solid #ddd;
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .contact-form input {
+        width: 80%;
+        float: left; } }
+  .contact-form label {
+    display: block;
+    line-height: 50px; }
+    @media (min-width: 768px) {
+      .contact-form label {
+        width: 20%;
+        float: left; } }
+  .contact-form textarea {
+    margin-bottom: 10px;
+    min-height: 150px;
+    width: 100%;
+    float: left;
+    display: block;
+    background-color: #eee;
+    border-radius: 3px;
+    border: 2px solid #ddd; }
+    @media (min-width: 768px) {
+      .contact-form textarea {
+        width: 80%;
+        float: left; } }
+  .contact-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #5C8BFF;
+    border: none;
+    color: white;
+    clear: both; }
+    .contact-form input[type="submit"]:hover {
+      background-color: #7BA7FF; }

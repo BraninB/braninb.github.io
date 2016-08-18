@@ -1,6 +1,223 @@
+// Brand colors
+$brand_primary:  black;
+$brand_secondary: #555;
+$brand_neutral: #777;
+$brand_red: #ed1c24;
+
+// Background colors
+$background_body: #fff;
+$background_header: #273a81;
+$background_footer: #383838;
+$background_copyright: #333;
+$background_light: #f1f1f1;
+$background_alt: #efefef;
+
+// Text colors
+$text_main: #4a4a4a;
+$text_light: #a3a3a3;
+$text_form_input: #666;
+$text_nav_main: #ffffff;
+$text_link: #333;
+
+// Border colors
+$color_border_input_field: #ccc;
+$color_border_section: #ddd;
+
+// Miscellaneous colors
+$color_white: #fff;
+$color_gray: #ccc;
+$color_lightgray: #eee;
+$color_trans_white: rgba(255,255,255,0.8);
+$color_trans_black: rgba(0,0,0,0.6);
+
+// Social media colors
+$color_facebook: #365397;
+$color_twitter: #00a9f1;
+$color_google_plus: #e0452c;
+$color_linkedin: #006db3;
+$color_skype: #12A5F4;
+$color_sharethis: #01BF01;
+
+// Border radius
+$border_radius: 3px;
+
+// Transition duration for links
+$transistion_duration: 0.3s;
+
+// Typography
+$font_face_main: 'Raleway', sans-serif;
+$font_face_headings: 'Raleway', sans-serif;
+$font_size_main: 14px;
+$font_weight_main: 300;
+$font_line_height_main: 1.5em;
+// Responsive breakpoints
+$width_mobile: 480px;
+$width_phablet: 560px;
+$width_tablet: 768px;
+$width_laptop: 992px;
+$width_desktop: 1200px;
+$width_hdtv: 1600px;
+$hidden_mobile: 559px;
+
+@mixin mobile 	{ @media (min-width: #{$width_mobile})	{ @content; } }
+@mixin phablet 	{ @media (min-width: #{$width_phablet})	{ @content; } }
+@mixin tablet 	{ @media (min-width: #{$width_tablet})	{ @content; } }
+@mixin laptop 	{ @media (min-width: #{$width_laptop})	{ @content; } }
+@mixin desktop 	{ @media (min-width: #{$width_desktop})	{ @content; } }
+@mixin hdtv 	{ @media (min-width: #{$width_hdtv})	{ @content; } }
+@mixin nomobile { @media (max-width: #{$hidden_mobile})	{ @content; } }
+
 @import "reset";
 @import "syntax";
 
 body {
     background: white;
+}
+
+/* -----------------------------------------header-------------------------------- */
+.site{
+	padding: 0;
+	margin: 0;
+}
+.header{
+	background-color:$brand_primary;
+	h1{
+		font-size: 2rem;
+		color: white;
+
+		@include tablet {
+			margin: 0;
+		}
+		
+	}
+}
+.nav{
+	list-style-type: none;
+	display:block;
+	text-align:center;
+
+	@include tablet {
+		display:inline-block;
+		float: right;
+		text-align:center;
+	}
+	li{
+		display:inline-block;
+	}
+}
+
+/* -----------------------------------------content-------------------------------- */
+.hero{
+	background-image: url(/img/mountain.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	min-height:394px;
+
+	h1{
+		font-size: 2em;
+		color: white;
+		text-align: center;
+		line-height: 200px;
+	}
+	p{
+		text-align: center;
+		font-size: 1em;
+		color: white;
+	}
+	a{
+		text-decoration: none;
+		line-height: 5em;
+		color: white;
+		margin:0 auto;
+		text-align: center;
+		display: block;
+		width: 300px;
+		border:white solid 1px;
+		border-radius: 4px;
+		&:hover{ background-color: rgba(255, 255, 255, 0.1);
+
+		}
+	}
+
+	@include tablet {
+	min-height: 1000px;
+	}
+}
+.container{
+h1{
+	font-size: 2rem;
+	margin: 10px 0 6px 0;
+}
+}
+
+.row{
+		margin:0;
+	@include tablet {
+		margin: 0 -10px 0 -10px;	}
+}
+.onethird{
+	width: 100%;
+	@include tablet {
+		width: 33.3333%;
+		float: left;
+		padding: 10px;
+	}
+}
+/* -----------------------------------------contactform-------------------------------- */
+*{box-sizing:border-box;
+
+}
+.contact-form{
+	width: 100%;
+	input{
+		width: 100%;
+		display: block;
+		line-height: 50px;
+		background-color: #eee;
+		border-radius: 3px;
+		border: 2px solid #ddd;
+		margin-bottom: 10px;
+
+		@include tablet {
+		width: 80%;
+		float:left;
+		}
+	}
+	label{
+		display: block;
+		line-height: 50px;
+ 
+		@include tablet {
+		width: 20%;
+		float:left;
+		}
+	}
+	textarea{
+		margin-bottom:10px; 
+		min-height: 150px;
+		width: 100%;
+		float: left;
+		display: block;
+		background-color: #eee;
+		border-radius: 3px;
+		border: 2px solid #ddd;
+
+		@include tablet {
+		width: 80%;
+		float:left;
+		}
+	}
+	input[type="submit"] {
+		display:block;
+		width: 100%;
+		background-color: #5C8BFF;
+		border: none;
+		color: white;
+		clear:both;
+
+		&:hover{
+			background-color: #7BA7FF;
+		}
+	}
 }

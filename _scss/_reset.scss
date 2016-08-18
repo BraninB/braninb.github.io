@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 100%; }
 
 h1 { margin-bottom: 1em; }
+
 p { margin: 1em 0; }
 
 a         { color: #00a; }
@@ -58,36 +59,62 @@ a:visited { color: #a0a; }
 .site {
     font-size: 115%;
     text-align: justify;
-    width: 42em;
+    width: 100%;
     margin: 3em auto 2em;
     line-height: 1.5em;
 }
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
 
-.header a {
-    font-weight: bold;
-    text-decoration: none;
+.content{
+    padding:20px;
+    margin:0 auto;
+    @include tablet {
+        width: 80%;
+    }
+    @include laptop {
+        width: 900px;
+    }
+}
+
+
+.header {
+
+
+    a {
+        text-decoration: none;
+    }
 }
 
 .title {
-    display: inline-block;
+    display: block;
     margin-bottom: 2em;
+    text-align:center;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: $color_trans_white;
+        }
+    }
+
+    @include tablet { 
+        text-align: left;
+        display: inline-block;
+    }
 }
 
-.title a {
-    color: #a00;
-}
-
-.title a:hover {
-    color: #000;
-}
 
 .header a.extra {
-    color: #aaa;
+    color: white;
     margin-left: 1em;
 }
 
 .header a.extra:hover {
-    color: #000;
+    color: $color_trans_white;
 }
 
 .meta {
@@ -120,6 +147,19 @@ a:visited { color: #a0a; }
 .footer .rss img {
     border: 0;
 }
+
+
+.header a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 
 /*****************************************************************************/
 /*
